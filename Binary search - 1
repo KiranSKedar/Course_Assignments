@@ -1,0 +1,29 @@
+Notes - 1.always compare the target not the mid
+        2.start =0 & end=size-1 ..not the elements at that pos
+
+
+class Solution {
+public:
+    int search(vector<int>& nums, int target) {
+
+        int n=nums.size();
+        int start=0,end=n-1;
+        while(start<=end){
+            int mid=start+(end-start)/2;
+            if(nums[mid]==target){
+                return mid;
+            }
+            else if(nums[mid]<target){
+                start=mid+1;
+
+            }
+            else{
+                end=mid-1;
+            }
+
+            
+        }
+        return -1;
+        
+    }
+};
