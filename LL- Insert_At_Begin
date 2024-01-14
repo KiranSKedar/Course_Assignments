@@ -6,6 +6,14 @@ Write your code in this editor and press "Run" button to compile and execute it.
 
 *******************************************************************************/
 
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
 #include <iostream>
 
 using namespace std;
@@ -28,15 +36,23 @@ void printList(Node * head){
     printList(head);
 }
 
-Node * InsertAtFirst(Node * head, int newData){
+void InsertAtFirst(Node **head_ref, int newData){
     Node *newNode=new Node();
     
     newNode->val=newData;
-    newNode->next=head;
-    head=newNode;
-    return head;
+    newNode->next=*head_ref;
+    *head_ref=newNode;
+    // return head;
 }
 
+
+void InsertAtMiddle(Node * prev, int data){
+    
+    Node * newNode=new Node();
+    newNode->val=data;
+    newNode->next=prev->next;
+    prev->next=newNode;
+}
 int main()
 {
     // cout<<"Hello World";
@@ -67,9 +83,15 @@ int main()
     
     
     
-    head = InsertAtFirst(head,x);
+    InsertAtFirst(&head,x);
     
     cout<<endl;
+    
+    printList(head);
+    
+    cout<<endl;
+    
+    InsertAtMiddle(head->next,90);
     
     printList(head);
 
