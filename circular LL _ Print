@@ -1,0 +1,14 @@
+
+void printCircularList(node * first){
+    node *temp = first;
+    
+    if(first!=NULL){
+        cout<<temp->data<<endl;
+        temp = temp->next;  // this changes in temp
+        
+        while(temp != first){
+            cout<<temp->data<<endl;
+            temp = temp->next;
+        }
+    }
+}
