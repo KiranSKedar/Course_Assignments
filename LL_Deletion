@@ -1,0 +1,28 @@
+
+void deleteNode(Node **headref,int data){
+    
+    Node *temp, *prev;
+    temp=*headref;
+    
+    if(temp!=NULL  && temp->val==data){
+        *headref=temp->next;
+        free(temp);
+        return;
+    }
+    
+    while(temp!=NULL && temp->val!=data){
+        prev=temp;
+        temp=temp->next;    
+        
+    }
+    
+    if(temp->val!=data)
+        return ;
+        
+        prev->next=temp->next;
+        
+        free(temp);
+    
+    
+    
+}
