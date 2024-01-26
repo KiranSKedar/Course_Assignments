@@ -1,0 +1,13 @@
+https://leetcode.com/problems/delete-node-in-a-linked-list/submissions/
+
+https://www.youtube.com/watch?v=aYMkovfoPqU&list=PLzjZaW71kMwQ1DIWTn0d_KDHU4_E52-rq&index=19
+
+class Solution {
+public:
+    void deleteNode(ListNode* node) {
+        ListNode *curr=node->next;
+        node->val=curr->val;
+        node->next=curr->next;
+        
+    }
+};
